@@ -24,5 +24,12 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(uvc, animated: true)
     }
     
+    @IBAction func movePresent(_ sender: Any) {
+        guard let uvc = self.storyboard?.instantiateViewController(withIdentifier: "SecondVC") else {
+            return
+        }
+        
+        self.present(uvc, animated: true)
+    }
 }
 
