@@ -10,3 +10,4 @@
 - **Scene-Trans01**
 - **Scene-Trans02**
 - **Scene-ActionSegue**
+- **Scene-ManualSegue**
