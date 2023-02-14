@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  Scene-MultiUnwind
+//  Scene-CustomSegue
 //
-//  Created by 김영빈 on 2023/02/13.
+//  Created by 김영빈 on 2023/02/14.
 //
 
 import UIKit
@@ -14,9 +14,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func gotoPage1(_ segue: UIStoryboardSegue) {
-        
-    }
 
 }
 
