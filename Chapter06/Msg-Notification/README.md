@@ -38,9 +38,17 @@ UserNotification 프레임워크에서는 로컬/푸시 알림을 사용하기 �
     - 2번째 인자값 : 메세지 창의 버튼을 눌렀을 때 실행되는 클로저 (알림 동의 여부 / 오류 발생 시 오류 객체 타입 2개의 매개변수로 구성됨)
 
 ----
-## [ 받은 알림 처리하기 ]
+### [ 받은 알림 처리하기 ]
 델리게이트 패턴 구조를 사용하여 받은 알림에 대해 처리해줄 수 있다.
 1. AppDelegate 클래스에 UNUserNotificationCenterDelegate 프로토콜을 추가해준다.
 2. userNotificationCenter 메소드를 구현해준다.
     - userNotificationCenter(_:willPresent:withCompletionHandler:) : 앱 실행 중 알림 메세지 도착할 경우 호출
     - userNotificationCenter(_:didReceive:withCompletionHandler:) : 사용자가 알림 메시지를 실제로 클릭 시 호출
+
+
+
+
+
+
+----
+## [ UILocalNotification 객체를 이용한 로컬 알림 ]
