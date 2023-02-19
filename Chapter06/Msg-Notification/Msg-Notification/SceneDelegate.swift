@@ -38,6 +38,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This may occur due to temporary interruptions (ex. an incoming phone call).
         
         // 플랫폼 버전에 따라 실행 로직을 구분해준다. (iOS 9까지는 UILocalNotification 객체 / iOS 10 이상부터는 UserNotification 프레임워크)
+        /* --------------- UserNotifications 사용하는 경우 (iOS 10.0 이상) --------------- */
         if #available(iOS 10.0, *) { // UserNotification 프레임워크를 이용한 로컬 알림 (iOS 10 이상)
             // 알림 동의 여부를 확인
             UNUserNotificationCenter.current().getNotificationSettings { settings in
@@ -64,7 +65,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     print("사용자가 동의하지 않음!!!")
                 }
             }
-        } else { // UILocalNotification 객체를 이용한 로컬 알림 (iOS 9.0 이하)
+        } else { // UILocalNotification 객체를 이용한 로컬 알림
+            /* --------------- UILocalNotification 사용하는 경우 (iOS 10.0 미만) --------------- */
+            // 알림 설정 확인
+            let setting = UIApplication.shared.currentUserNotificationSettings
+            
+            // 알림 설정이 되어 있지 않다면 로컬 알림을 보내도 받을 수 없으므로 종료함
+            guard setting?.types != .none else {
+                print("Can't Schedule")
+                return
+            }
+            
+            // 로컬 알림 인스턴스 생성
+            let noti = UILocalNotification()
+            noti.fireDate = Date(timeIntervalSinceNow: 10) // 10초 후 발송
+            noti.timeZone = TimeZone.autoupdatingCurrent // 현재 위치에 따라 타임존 설정
+            noti.alertBody = "얼른 다시 접속하세요!!!" // 표시될 메세지
+            noti.alertAction = "학습하기" // 잠금 상태일 때 표시될 액션 ("밀어서 학습하기")
+            noti.applicationIconBadgeNumber = 1 // 앱 아이콘 모서리에 표시될 배지
+            noti.soundName = UILocalNotificationDefaultSoundName // 로컬 알람 도착 시 사운드
+            noti.userInfo = ["name": "홍길동"] // 알람 실행 시 함께 전달하고 싶은 값. (화면에는 표시되지 X)
+            
+            // 생성된 알람 객체를 스케줄러에 등록
+            UIApplication.shared.scheduleLocalNotification(noti)
             
         }
     }

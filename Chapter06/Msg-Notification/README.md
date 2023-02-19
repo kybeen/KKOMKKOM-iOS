@@ -52,3 +52,8 @@ UserNotification 프레임워크에서는 로컬/푸시 알림을 사용하기 �
 
 ----
 ## [ UILocalNotification 객체를 이용한 로컬 알림 ]
+- **UIApplication.shared** : UIApplication 객체는 싱글턴 패턴으로 설계되어 있기 때문에 참조하고 싶다면UIApplication.shared 로 접근해준다.
+    - **.registerUserNotificationSettings(_:)** : 알림 허용 여부를 사용자에게 확인받고, 사용자의 선택을 애플리케이션에 등록
+    - **.currentUserNotificationSettings** : 현재 설정된 알림 허용 여부 정보를 읽어옴
+    - **.scheduleLocalNotification(_:)** : 생성된 알림 객체를 iOS의 스케줄러에 등록한다. 등록된 알림 객체는 fireDate 속성에 설정된 시간에 맞게 발송된다.
+    - **.presentLocalNotificationNow(_:)** : 생성된 알림 객체의 fireDate 속성을 무시하고, 즉각 발송함

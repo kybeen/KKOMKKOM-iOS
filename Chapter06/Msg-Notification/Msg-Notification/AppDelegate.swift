@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         /* 실습 코드 작성 */
+        
+        /* --------------- UserNotifications 사용하는 경우 (iOS 10.0 이상) --------------- */
         if #available(iOS 10.0, *) {
             // 경고창, 배지, 사운드를 사용하는 알림 환경 정보를 생성하고, 사용자 동의 여부 창을 실행
             // UNUserNotificationCenter 객체는 싱글톤 패턴으로 정의되어 있기 때문에 인스턴스 객체를 만들지 않고, UNUserNotificationCenter.current() 로 시스템 제공 인스턴스를 받아온다.
@@ -28,6 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             
         } else {
             
+            /* --------------- UILocalNotification 사용하는 경우 (iOS 10.0 미만) --------------- */
+            // 경고창, 배지, 사운드를 사용하는 알림 환경 정보를 생성하고, 이를 애플리케이션에 저장 (사용자 동의 후)
+            let setting = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(setting)
         }
         
         return true
