@@ -8,5 +8,5 @@
 ### Chapter 05 다른 뷰 컨트롤러와 데이터 주고받기
 ### Chapter 06 사용자에게 메시지를 전달하는 방법
 ### Chapter 07 델리게이트 패턴
-### MovieApp
+### MovieApp - 영화 앱 제작 실습
 - Chaper 08 테이블 뷰를 이용한 데이터 목록 구현
