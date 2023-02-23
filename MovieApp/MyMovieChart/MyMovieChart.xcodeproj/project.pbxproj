@@ -13,6 +13,8 @@
 		C44C2B5929A7CFF2009D806D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C44C2B5729A7CFF2009D806D /* Main.storyboard */; };
 		C44C2B5B29A7CFF4009D806D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C44C2B5A29A7CFF4009D806D /* Assets.xcassets */; };
 		C44C2B5E29A7CFF4009D806D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C44C2B5C29A7CFF4009D806D /* LaunchScreen.storyboard */; };
+		C44C2B6629A7D1F4009D806D /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C2B6529A7D1F4009D806D /* ListViewController.swift */; };
+		C44C2B6829A7E106009D806D /* MovieVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C2B6729A7E106009D806D /* MovieVO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		C44C2B5A29A7CFF4009D806D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C44C2B5D29A7CFF4009D806D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C44C2B5F29A7CFF4009D806D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C44C2B6529A7D1F4009D806D /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		C44C2B6729A7E106009D806D /* MovieVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				C44C2B5329A7CFF2009D806D /* SceneDelegate.swift */,
 				C44C2B5529A7CFF2009D806D /* ViewController.swift */,
 				C44C2B5729A7CFF2009D806D /* Main.storyboard */,
+				C44C2B6529A7D1F4009D806D /* ListViewController.swift */,
+				C44C2B6729A7E106009D806D /* MovieVO.swift */,
 				C44C2B5A29A7CFF4009D806D /* Assets.xcassets */,
 				C44C2B5C29A7CFF4009D806D /* LaunchScreen.storyboard */,
 				C44C2B5F29A7CFF4009D806D /* Info.plist */,
@@ -140,7 +146,9 @@
 			files = (
 				C44C2B5629A7CFF2009D806D /* ViewController.swift in Sources */,
 				C44C2B5229A7CFF2009D806D /* AppDelegate.swift in Sources */,
+				C44C2B6629A7D1F4009D806D /* ListViewController.swift in Sources */,
 				C44C2B5429A7CFF2009D806D /* SceneDelegate.swift in Sources */,
+				C44C2B6829A7E106009D806D /* MovieVO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
