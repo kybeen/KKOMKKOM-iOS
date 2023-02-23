@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gnm-mt-JkZ">
-                                <rect key="frame" x="51" y="136" width="312" height="34"/>
+                                <rect key="frame" x="125" y="136" width="238" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -41,11 +41,19 @@
                                     <action selector="confirm:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lwF-KX-Hpo"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VPI-Da-0E7">
+                                <rect key="frame" x="58" y="139" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="editingAllow:" destination="BYZ-38-t0r" eventType="valueChanged" id="XB9-F1-H8V"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="editingSwitch" destination="VPI-Da-0E7" id="wDr-oU-DFQ"/>
                         <outlet property="tf" destination="gnm-mt-JkZ" id="gWU-vW-fzp"/>
                     </connections>
                 </viewController>

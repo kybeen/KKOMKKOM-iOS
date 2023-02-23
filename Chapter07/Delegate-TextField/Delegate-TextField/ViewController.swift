@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var tf: UITextField!
+    @IBOutlet var editingSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // self : 현재 뷰 컨트롤러의 인스턴스
         // 텍스트 필드에서 미리 정해진 특정 이벤트가 발생하면 현재의 뷰 컨트롤러에게 알려주기 ==> 뷰 컨트롤러가 텍스트 필드의 델리게이트 객체로 지정됨
         self.tf.delegate = self
+        self.tf.clearButtonMode = .whileEditing // 클리어버튼 활성화
+        
     }
     
     @IBAction func confirm(_ sender: Any) {
@@ -54,5 +57,63 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.tf.becomeFirstResponder()
     }
     
+    @IBAction func editingAllow(_ sender: Any) {
+        if self.editingSwitch.isOn == true {
+            print("편집이 가능합니다!")
+        } else {
+            print("편집 기능이 막혀있습니다.")
+        }
+    }
+    
+    /* 델리게이트 메소드 추가하기 */
+    
+    // 텍스트 필드의 편집을 시작할 때 호출
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        print("텍스트 필드의 편집이 시작됩니다.")
+        return true // false를 리턴하면 편집되지 않는다.
+    }
+    // 텍스트 필드의 편집이 시작된 후 호출
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print("텍스트 필드의 편집이 시작되었습니다.")
+    }
+    // 텍스트 필드의 내용이 삭제될 때 호출
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        print("텍스트 필드의 내용이 삭제됩니다.")
+        return true // false를 리턴하면 삭제되지 않는다.
+    }
+    // 텍스트필드의 내용이 변경될 때 호출
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        print("텍스트 필드의 내용이 \(string)으로 변경됩니다.")
+        // 스위치가 켜져 있으면 편집 가능
+        if self.editingSwitch.isOn == true {
+            if Int(string) == nil { // 입력된 값이 숫자가 아니라면 true를 리턴
+                // 현재 텍스트 필드에 입력된 길이와 더해질 문자열 길이의 합이 10을 넘는다면 반영하지 않음
+                if (textField.text?.count)! + string.count > 10 {
+                    return false
+                } else {
+                    return true
+                }
+            } else { // 입력된 값이 숫자라면 false를 리턴
+                return false
+            }
+        } else {
+            return false
+        }
+    }
+    // 텍스트 필드의 리턴키가 눌러졌을 때 호출
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        print("텍스트 필드의 리턴키가 눌러졌습니다.")
+        return true
+    }
+    // 텍스트 필드 편집이 종료될 때 호출
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        print("텍스트 필드의 편집이 종료됩니다.")
+        return true // false를 리턴하면 편집이 종료되지 않는다.
+    }
+    // 텍스트 필드의 편집이 종료되었을 때 호출
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print("텍스트 필드의 편집이 종료되었습니다.")
+    }
 }
 
