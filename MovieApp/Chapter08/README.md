@@ -109,7 +109,7 @@ var img = UIImage(contentsOfFile: <프로젝트 내 파일 경로>)
 
 ----
 ## 8.5 테이블 뷰의 행 높이를 결정하는 방식
-- **Table-CellHeight - 테이블 뷰의 행 높이를 결정하는 방식 실습**
+- **Table-CellHeight - 테이블 뷰의 행 높이를 결정하는 방식 실습 프로젝트**
 ----
 - **tableView(_:heightForRowAt:)** : 반환되는 값으로 해당 셀의 행 높이가 결정됨 (UITableView 클래스에서 이미 구현되어 있기 때문에 override)
     - 개별적인 행 높이를 제어할 수 있다.
