@@ -1,7 +1,7 @@
 import Foundation
 
 class MovieVO {
-    var thumnail: String? // 영화 썸네일 이미지 주소
+    var thumbnail: String? // 영화 썸네일 이미지 주소
     var title: String? // 영화 제목
     var description: String? // 영화 설명
     var detail: String? // 상세정보

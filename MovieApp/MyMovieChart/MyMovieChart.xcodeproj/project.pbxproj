@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C429C4E629AA27E5003849F7 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C429C4E529AA27E5003849F7 /* MovieCell.swift */; };
+		C429C4EB29AA2C48003849F7 /* secret.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C429C4E829AA2C47003849F7 /* secret.jpg */; };
+		C429C4EC29AA2C48003849F7 /* darknight.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C429C4E929AA2C48003849F7 /* darknight.jpg */; };
+		C429C4ED29AA2C48003849F7 /* rain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C429C4EA29AA2C48003849F7 /* rain.jpg */; };
 		C44C2B5229A7CFF2009D806D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C2B5129A7CFF2009D806D /* AppDelegate.swift */; };
 		C44C2B5429A7CFF2009D806D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C2B5329A7CFF2009D806D /* SceneDelegate.swift */; };
 		C44C2B5629A7CFF2009D806D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C2B5529A7CFF2009D806D /* ViewController.swift */; };
@@ -18,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C429C4E529AA27E5003849F7 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		C429C4E829AA2C47003849F7 /* secret.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = secret.jpg; sourceTree = "<group>"; };
+		C429C4E929AA2C48003849F7 /* darknight.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = darknight.jpg; sourceTree = "<group>"; };
+		C429C4EA29AA2C48003849F7 /* rain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rain.jpg; sourceTree = "<group>"; };
 		C44C2B4E29A7CFF2009D806D /* MyMovieChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMovieChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44C2B5129A7CFF2009D806D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C44C2B5329A7CFF2009D806D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +49,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C429C4E729AA2B5D003849F7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C429C4E929AA2C48003849F7 /* darknight.jpg */,
+				C429C4EA29AA2C48003849F7 /* rain.jpg */,
+				C429C4E829AA2C47003849F7 /* secret.jpg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		C44C2B4529A7CFF2009D806D = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +78,8 @@
 		C44C2B5029A7CFF2009D806D /* MyMovieChart */ = {
 			isa = PBXGroup;
 			children = (
+				C429C4E729AA2B5D003849F7 /* Resources */,
+				C429C4E529AA27E5003849F7 /* MovieCell.swift */,
 				C44C2B5129A7CFF2009D806D /* AppDelegate.swift */,
 				C44C2B5329A7CFF2009D806D /* SceneDelegate.swift */,
 				C44C2B5529A7CFF2009D806D /* ViewController.swift */,
@@ -132,8 +152,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C44C2B5E29A7CFF4009D806D /* LaunchScreen.storyboard in Resources */,
+				C429C4ED29AA2C48003849F7 /* rain.jpg in Resources */,
 				C44C2B5B29A7CFF4009D806D /* Assets.xcassets in Resources */,
 				C44C2B5929A7CFF2009D806D /* Main.storyboard in Resources */,
+				C429C4EB29AA2C48003849F7 /* secret.jpg in Resources */,
+				C429C4EC29AA2C48003849F7 /* darknight.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +169,7 @@
 			files = (
 				C44C2B5629A7CFF2009D806D /* ViewController.swift in Sources */,
 				C44C2B5229A7CFF2009D806D /* AppDelegate.swift in Sources */,
+				C429C4E629AA27E5003849F7 /* MovieCell.swift in Sources */,
 				C44C2B6629A7D1F4009D806D /* ListViewController.swift in Sources */,
 				C44C2B5429A7CFF2009D806D /* SceneDelegate.swift in Sources */,
 				C44C2B6829A7E106009D806D /* MovieVO.swift in Sources */,
