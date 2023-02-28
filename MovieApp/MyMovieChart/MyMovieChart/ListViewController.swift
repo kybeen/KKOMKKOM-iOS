@@ -1,4 +1,6 @@
 import UIKit
+import Foundation
+import Alamofire
 
 class ListViewController: UITableViewController {
     // 튜플 아이템으로 구성된 데이터 세트
@@ -75,16 +77,43 @@ class ListViewController: UITableViewController {
     }
     
     override func viewDidLoad() {
-        /* API 호출하기 */
-        // (1) 호핀 API 호출을 위한 URI를 생성
-        let url = "http://swiftapi.rubypaper.co.kr:2029/hoppin/movies?version=1&page=1&count=10&genreId=&order=releasedateasc"
-        let apiURI: URL! = URL(string: url)
+//        /* API 호출하기 - 루비페이퍼 API 먹통이라 네이버 API로 대체 */
+//        // (1) 호핀 API 호출을 위한 URI를 생성
+//        let url = "http://swiftapi.rubypaper.co.kr:2029/hoppin/movies?version=1&page=1&count=10&genreId=&order=releasedateasc"
+//        let apiURI: URL! = URL(string: url)
+//        // (2) REST API를 호출
+//        let apidata = try! Data(contentsOf: apiURI)
+//        // (3) 데이터 전송 결과를 로그로 출력 (반드시 필요한 코드는 아님)
+//        // 인자로 받은 Data 객체를 문자열로 변환해주기 위해 String이 아닌 NSString 타입으로 변환
+//        let log = NSString(data: apidata, encoding: String.Encoding.utf8.rawValue) ?? ""
+//        NSLog("API Result = \(log)")
         
-        // (2) REST API를 호출
-        let apidata = try! Data(contentsOf: apiURI)
+        /* API 호출하기 - 네이버 API */
+        let url = "https://openapi.naver.com/v1/search/movie.json?query=%EC%98%81%ED%99%94&display=10&start=1&genre=1"
+        let naverClientId = "9mhe5KqS8bkpbFBuGJek" //
+        let naverClientSecret = "OPaVHO5wiD" //
         
-        // (3) 데이터 전송 결과를 로그로 출력 (반드시 필요한 코드는 아님)
-        let log = NSString(data: apidata, encoding: String.Encoding.utf8.rawValue) ?? ""
-        NSLog("API Result = \(log)")
+        AF.request(url,
+                    method: .get,
+                    parameters: nil,
+                    encoding: URLEncoding.default,
+                    headers: [
+                        "X-Naver-Client-Id": naverClientId,
+                        "X-Naver-Client-Secret": naverClientSecret
+                    ]
+        )
+        .validate(statusCode: 200..<300)
+        .responseJSON { (response) in
+            switch response.result {
+            case .success(let data):
+                print("success \(data)")
+            case .failure(let error):
+                print("error \(error)")
+            }
+        }
+
+
+        
+        
     }
 }
