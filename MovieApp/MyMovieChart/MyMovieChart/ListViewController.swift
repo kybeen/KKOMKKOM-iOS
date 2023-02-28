@@ -90,16 +90,14 @@ class ListViewController: UITableViewController {
         
         /* API 호출하기 - 네이버 API */
         let url = "https://openapi.naver.com/v1/search/movie.json?query=%EC%98%81%ED%99%94&display=10&start=1&genre=1"
-        let naverClientId = "9mhe5KqS8bkpbFBuGJek" //
-        let naverClientSecret = "OPaVHO5wiD" //
         
         AF.request(url,
                     method: .get,
                     parameters: nil,
                     encoding: URLEncoding.default,
                     headers: [
-                        "X-Naver-Client-Id": naverClientId,
-                        "X-Naver-Client-Secret": naverClientSecret
+                        "X-Naver-Client-Id": Bundle.main.X_NAVER_CLIENT_ID,
+                        "X-Naver-Client-Secret": Bundle.main.X_NAVER_CLIENT_SECRET
                     ]
         )
         .validate(statusCode: 200..<300)
