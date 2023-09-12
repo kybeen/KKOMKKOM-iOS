@@ -12,9 +12,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     // 앱이 처음 실행될 때, 필요한 시스템적 처리를 모두 끝내고 메인 화면을 표시하기 직전에 호출
+    // 앱이 맨 처음 실행될 때 시작 화면이 모바일 기기의 스크린에 표시된 후 이 메소드가 호출됨
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        sleep(3)
+        sleep(3) // 런치스크린에 딜레이 주기
         return true
     }
 
