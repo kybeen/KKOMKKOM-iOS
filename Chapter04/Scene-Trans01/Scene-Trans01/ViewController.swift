@@ -25,7 +25,6 @@ class ViewController: UIViewController {
 //         let uvc = self.storyboard!.instantiateViewController(withIdentifier: "SecondVC")
 //
 //
-//
 //        /*
 //         [ 화면 전환할 때의 애니메이션 타입 ]
 //
