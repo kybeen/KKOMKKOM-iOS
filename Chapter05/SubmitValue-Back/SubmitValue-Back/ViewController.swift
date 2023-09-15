@@ -9,12 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    // [ 아울렛 변수 ]
+    // MARK: - 아울렛 변수
     @IBOutlet var resultEmail: UILabel!
     @IBOutlet var resultUpdate: UILabel!
     @IBOutlet var resultInterval: UILabel!
     
-    /* 직접 전달 방식 사용 */
+    // MARK: - 직접 전달 방식 사용
 //    // 값을 직접 전달받을 프로퍼티들
 //    var paramEmail: String?
 //    var paramUpdate: Bool?
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
 //    }
     
     
-    /* 간접 전달 방식 (AppDelegate 사용) */
+    // MARK: - 간접 전달 방식 (AppDelegate 사용)
 //    override func viewWillAppear(_ animated: Bool) {
 //        // AppDelegate.swift의 AppDelegate 객체의 인스턴스를 갖고온다.
 //        let ad = UIApplication.shared.delegate as? AppDelegate
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
 //    }
     
     
-    /* 간접 전달 방식 (UserDefaults 사용) */
+    // MARK: - 간접 전달 방식 (UserDefaults 사용)
     override func viewWillAppear(_ animated: Bool) {
         // UserDefaults 객체의 인스턴스를 갖고온다.
         let ud = UserDefaults.standard

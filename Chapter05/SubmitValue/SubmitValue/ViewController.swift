@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     
     // -------------- [ Submit 버튼 클릭 시 호출 1 ] --------------
     @IBAction func onSubmit(_ sender: Any) {
-        // VC2의 인스턴스 생성 - 전환할 뷰 컨트롤러의 프로퍼티를 참조하고 값을 대입해야 하기 때문에 해당 클래스로 타입 캐스팅을 해주어야 한다.
+        // VC2의 인스턴스 생성 - 화면 전환 뿐만 아니라 전환할 뷰 컨트롤러의 프로퍼티를 참조하고 값을 대입해야 하기 때문에 UIViewController를 ResultViewController 클래스로 타입 캐스팅을 해주어야 한다.
         guard let rvc = self.storyboard?.instantiateViewController(withIdentifier: "RVC") as? ResultViewController else {
             return
         }
@@ -51,8 +51,8 @@ class ViewController: UIViewController {
         rvc.paramInterval = self.interval.value // 갱신주기
         
         // 화면 이동
-//        self.present(rvc, animated: true)
-        self.navigationController?.pushViewController(rvc, animated: true)
+//        self.present(rvc, animated: true) // 프레젠테이션 방식
+        self.navigationController?.pushViewController(rvc, animated: true) // 내비게이션 방식
     }
     
     // -------------- [ Submit 버튼 클릭 시 호출 2 - 매뉴얼 세그웨이 사용 시 ] --------------
@@ -73,4 +73,3 @@ class ViewController: UIViewController {
         rvc.paramInterval = self.interval.value
     }
 }
-

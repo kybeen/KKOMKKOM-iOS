@@ -2,12 +2,12 @@ import UIKit
 
 // 값 전달받은 화면 뷰 컨트롤러
 class ResultViewController: UIViewController {
-    // [ 아울렛 변수 ]
+    // MARK: - 아울렛 변수
     @IBOutlet var resultEmail: UILabel! // 이메일
     @IBOutlet var resultUpdate: UILabel! // 자동갱신 여부
     @IBOutlet var resultInterval: UILabel! // 갱신주기
     
-    // [ 이전 화면으로부터 값을 대입받을 프로퍼티 ]
+    // MARK: - 이전 화면으로부터 전달되는 값을 대입받을 프로퍼티
     // 아울렛 변수는 외부에서 값을 직접 대입할 수 없는 변수이고, 외부 객체에서 직접 참고할 수 없기 때문에 값을 대입받을 프로퍼티를 별도로 만들어 주어야 한다.
     var paramEmail: String = ""
     var paramUpdate: Bool = false

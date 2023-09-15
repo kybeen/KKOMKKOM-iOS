@@ -1,7 +1,7 @@
 import UIKit
 
 class FormViewController: UIViewController {
-    // [ 아울렛 변수 ]
+    // MARK: - 아울렛 변수
     @IBOutlet var email: UITextField!
     @IBOutlet var isUpdate: UISwitch!
     @IBOutlet var interval: UIStepper!
@@ -9,7 +9,7 @@ class FormViewController: UIViewController {
     @IBOutlet var updateLabel: UILabel!
     @IBOutlet var intervalLabel: UILabel!
     
-    // [ 액션 메소드 ]
+    // MARK: - 액션 메소드
     @IBAction func onSwitch(_ sender: UISwitch) {
         if (sender.isOn == true) {
             self.updateLabel.text = "자동갱신"
@@ -23,7 +23,7 @@ class FormViewController: UIViewController {
     }
     
     @IBAction func onSubmit(_ sender: Any) {
-        /* 직접 전달 방식 사용 */
+        // MARK: - 직접 전달 방식 사용
 //        // @@@ presentingViewController 속성을 통해 이전 화면 객체를 읽어온 다음, ViewController 타입(이전 화면 뷰 컨트롤러)으로 캐스팅 @@@
 //        let preVC = self.presentingViewController
 //        guard let vc = preVC as? ViewController else {
@@ -39,7 +39,7 @@ class FormViewController: UIViewController {
 //        self.presentingViewController?.dismiss(animated: true)
         
         
-        /* 간접 전달 방식 (AppDelegate 사용) */
+        // MARK: - 간접 전달 방식 (AppDelegate 사용)
 //        // AppDelegate.swift의 AppDelegate 객체의 인스턴스를 갖고온다.
 //        let ad = UIApplication.shared.delegate as? AppDelegate
 //
@@ -52,7 +52,7 @@ class FormViewController: UIViewController {
 //        self.presentingViewController?.dismiss(animated: true)
         
         
-        /* 간접 전달 방식 (UserDefaults 사용) */
+        // MARK: - 간접 전달 방식 (UserDefaults 사용)
         // UserDefault 객체의 인스턴스를 가져온다.
         let ud = UserDefaults.standard
         

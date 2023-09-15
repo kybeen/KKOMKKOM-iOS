@@ -10,7 +10,7 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    /* 값을 저장할 변수 정의 */
+    // MARK: - 값을 저장할 변수 정의
     var paramEmail : String?
     var paramUpdate : Bool?
     var paramInterval : Double?
