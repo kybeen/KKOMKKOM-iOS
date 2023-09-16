@@ -20,10 +20,10 @@ class ViewController: UIViewController {
     
     @IBAction func save(_ sender: Any) {
         if #available(iOS 10, *) {
-            /* ---------- UserNotifications 프레임워크를 사용한 로컬 알림 ---------- */
+            // MARK: - UserNotifications 프레임워크를 사용한 로컬 알림 (iOS 10 이상)
             // 알림 동의 여부를 확인
             UNUserNotificationCenter.current().getNotificationSettings { settings in
-                if settings.authorizationStatus == UNAuthorizationStatus.authorized {
+                if settings.authorizationStatus == .authorized {
                     DispatchQueue.main.async { // 백그라운드에서 실행되는 로직을 메인 쓰레드에서 실행되도록 처리해줌
                         // 알림 콘텐츠 정의
                         let nContent = UNMutableNotificationContent()
@@ -52,20 +52,39 @@ class ViewController: UIViewController {
                                 self.present(alert, animated: true)
                             }
                         }
-                        
-                        
                     }
                 } else {
                     let alert = UIAlertController(title: "알림 등록", message: "알림이 허용되어 있지 않습니다.", preferredStyle: .alert)
                     let ok = UIAlertAction(title: "확인", style: .default)
                     alert.addAction(ok)
                     
-                    self.present(alert, animated: true)
+                    self.present(alert, animated: false)
                     return
                 }
             }
-        } else {
-            /* ---------- LocalNotification 객체를 사용한 로컬 알림 ---------- */
+        }
+        else {
+            // MARK: - LocalNotification 객체를 사용한 로컬 알림 (iOS 10 미만)
+            // 알림 동의 여부 확인
+            let setting = UIApplication.shared.currentUserNotificationSettings
+            if setting?.types == .none {
+                // 알림 설정이 되어 있지 않은 경우
+                let alert = UIAlertController(title: "알림 등록", message: "알림이 허용되어 있지 않습니다.", preferredStyle: .alert)
+                let ok = UIAlertAction(title: "확인", style: .default)
+                alert.addAction(ok)
+                self.present(alert, animated: false)
+                return
+            } else {
+                // 알림 설정이 되어 있다면 알림을 등록해준다.
+                let noti = UILocalNotification()
+                noti.fireDate = self.datepicker.date
+                noti.timeZone = TimeZone.autoupdatingCurrent
+                noti.alertBody = self.msg.text
+                noti.alertTitle = "미리 알림"
+                noti.applicationIconBadgeNumber = 1
+                noti.soundName = UILocalNotificationDefaultSoundName
+                UIApplication.shared.scheduleLocalNotification(noti)
+            }
         }
     }
 }

@@ -11,12 +11,11 @@ import UserNotifications
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
-    /* 앱이 처음 실행될 때 호출되는 메소드 */
+    // MARK: - 앱이 처음 실행될 때 호출되는 메소드
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        /* 실습 코드 작성 */
         
-        /* --------------- UserNotifications 사용하는 경우 (iOS 10.0 이상) --------------- */
+        // MARK: - UserNotifications 사용하는 경우 (iOS 10.0 이상)
         if #available(iOS 10.0, *) {
             // 경고창, 배지, 사운드를 사용하는 알림 환경 정보를 생성하고, 사용자 동의 여부 창을 실행
             // UNUserNotificationCenter 객체는 싱글톤 패턴으로 정의되어 있기 때문에 인스턴스 객체를 만들지 않고, UNUserNotificationCenter.current() 로 시스템 제공 인스턴스를 받아온다.
@@ -28,25 +27,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
             notiCenter.delegate = self // 알림 센터와 관련하여 발생하는 이벤트를 앱 델리게이트 클래스가 감지하도록 설정
             
-        } else {
-            
-            /* --------------- UILocalNotification 사용하는 경우 (iOS 10.0 미만) --------------- */
+        }
+        // MARK: - UILocalNotification 사용하는 경우 (iOS 10.0 미만)
+        else {
             // 경고창, 배지, 사운드를 사용하는 알림 환경 정보를 생성하고, 이를 애플리케이션에 저장 (사용자 동의 후)
             let setting = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
             application.registerUserNotificationSettings(setting)
+            
+            if let localNoti = launchOptions?[UIApplication.LaunchOptionsKey.localNotification] as? UILocalNotification {
+                // MARK: - 알림으로 인해 앱이 실행된 경우. → 알림과 관련된 처리를 해준다.
+                print((localNoti.userInfo?["name"])!)
+            }
         }
         
         return true
     }
     
-    // 앱이 백그라운드 상태일 때 실행되는 메소드 --> XXXXX
+    // MARK: - 앱이 백그라운드 상태일 때 실행되는 메소드 --> XXXXX
     // iOS 13 버전부터는 SceneDelegate.swift의 sceneWillResignActive() 메소드임
 //    func applicationWillResignActive(_ application: UIApplication) {
 //
 //    }
     
-    /* 앱 실행 도중에 알림 메세지가 도착한 경우 */
-    @available(iOS 10.0, *)
+    // MARK: - 앱 실행 도중에 알림 메세지가 도착한 경우
+    @available(iOS 10.0, *) // 해당 메소드가 iOS 10부터 사용할 수 있음을 의미
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         if notification.request.identifier == "wakeup" {
             let userInfo = notification.request.content.userInfo
@@ -56,9 +60,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         completionHandler([.alert, .badge, .sound])
     }
     
-    /* 사용자가 알림 메세지를 클릭했을 경우 */
+    // MARK: - 사용자가 알림 메세지를 클릭했을 경우
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        // 알림 메시지에 대한 정보는 모두 response 매개변수에 담겨 전달됨
         if response.notification.request.identifier == "wakeup" {
             let userInfo = response.notification.request.content.userInfo
             print(userInfo["name"]!)
@@ -67,7 +72,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     
-    
+    // MARK: - 앱이 실행 중인 상태에서 알림이 도착했을 때 호출되는 메소드
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        print((notification.userInfo?["name"])!)
+        if application.applicationState == .active {
+            // 앱이 활성화 된 상태일 때 실행될 로직
+        } else if application.applicationState == .inactive {
+            // 앱이 비활성화된 상태일 때 실행할 로직
+        }
+    }
     
 
     // MARK: UISceneSession Lifecycle
