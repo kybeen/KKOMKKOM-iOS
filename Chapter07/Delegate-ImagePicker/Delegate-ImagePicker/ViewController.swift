@@ -29,16 +29,15 @@ class ViewController: UIViewController {
     }
 }
 
-/* 익스텐션 */
-// MARK:- 이미지 피커 컨트롤러 델리게이트 메소드
+// MARK: - 델리게이트 관련 내용은 익스텐션으로 따로 구분
 extension ViewController: UIImagePickerControllerDelegate {
-    /* 델리게이트 메소드 */
+    // MARK:- 이미지 피커 컨트롤러 델리게이트 메소드
     // 이미지 피커에서 이미지를 선택하지 않고 취소했을 때 호출되는 메소드
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         // 이미지 피커 컨트롤러 창 닫기
         // 내부적으로 알아서 self.presentingViewController 쪽으로 연결시켜 주기 때문에 self.dismiss()로 안해도 됨
-        picker.dismiss(animated: true) { () in
-            // 이미지 피커 컨트롤러가 완전히 닫히고 나서 실행되도록 하기 위해 dismiss(animated:complete:) 메소드 사용
+        picker.dismiss(animated: false) { () in
+            // 이미지 피커 컨트롤러가 완전히 닫히고 나서 로직이 실행되도록 하기 위해 dismiss(animated:complete:) 메소드 사용
             // 알림창 호출
             let alert = UIAlertController(title: "", message: "이미지 선택이 취소되었습니다.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "확인", style: .cancel))
@@ -49,9 +48,9 @@ extension ViewController: UIImagePickerControllerDelegate {
     // 이미지 피커에서 이미지를 선택했을 때 호출되는 메소드
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // 이미지 피커 컨트롤러 창 닫기
-        picker.dismiss(animated: true) { () in
+        picker.dismiss(animated: false) { () in
             // 이미지를 이미지 뷰에 표시
-            let img = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+            let img = info[UIImagePickerController.InfoKey.editedImage] as? UIImage // info에 편집된 이미지에 대한 관련 키를 넣어서 편집된 이미지 정보를 추출
             self.imgView.image = img
         }
     }
