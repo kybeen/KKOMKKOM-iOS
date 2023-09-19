@@ -33,12 +33,12 @@ class ListViewController: UITableViewController {
         self.present(alert, animated: true)
     }
     
-    // 테이블 뷰의 가로 행 수 결정
+    // MARK: - 테이블 뷰의 가로 행 수 결정
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.list.count
     }
     
-    // 테이블 뷰의 가로 행 내용 결정
+    // MARK: - 테이블 뷰의 가로 행 내용 결정
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // (1) "cell" 아이디를 가진 셀을 읽어온다. 없으면 UITableViewCell 인스턴스를 생성한다. (nil 병합 연산자 ?? 사용 - 582p)
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell()
@@ -51,7 +51,7 @@ class ListViewController: UITableViewController {
         return cell
     }
     
-    /* 입력된 글의 길이를 체크하여 셀의 높이를 조절해주는 메소드 */
+    // MARK: - 입력된 글의 길이를 체크하여 셀의 높이를 조절해주는 메소드
 //    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        let row = self.list[indexPath.row]
 //
@@ -60,7 +60,7 @@ class ListViewController: UITableViewController {
 //        return height
 //    }
     
-    /* 셀프 사이징 셀 적용하기 */
+    // MARK: - 셀프 사이징 셀 적용하기
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.estimatedRowHeight = 50 // 대충의(임시) 높이값
         self.tableView.rowHeight = UITableView.automaticDimension // 높이 동적으로 설정
