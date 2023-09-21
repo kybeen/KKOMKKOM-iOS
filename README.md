@@ -9,5 +9,6 @@
 ### Chapter 06 사용자에게 메시지를 전달하는 방법
 ### Chapter 07 델리게이트 패턴
 ### MovieApp - 영화 앱 제작 실습
-- Chaper 08 테이블 뷰를 이용한 데이터 목록 구현
-- Chaper 09 네트워크 통신과 API
+- Chapter 08 테이블 뷰를 이용한 데이터 목록 구현
+- Chapter 09 네트워크 통신과 API
+- Chapter 10 테이블 뷰의 동작원리
