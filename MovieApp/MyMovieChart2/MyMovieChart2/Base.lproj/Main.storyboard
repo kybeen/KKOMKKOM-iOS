@@ -80,6 +80,7 @@
                                     <outlet property="rating" destination="xHA-VT-naC" id="qHe-eW-evS"/>
                                     <outlet property="thumbnail" destination="GOw-ps-nqV" id="YxD-Pb-H2e"/>
                                     <outlet property="title" destination="t9i-WQ-eA1" id="ZOZ-dr-qor"/>
+                                    <segue destination="4Kn-hY-eCb" kind="show" identifier="segue_detail" id="ocI-nC-Waf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -97,18 +98,22 @@
             </objects>
             <point key="canvasLocation" x="1668" y="25.637181409295355"/>
         </scene>
-        <!--View Controller-->
+        <!--Title-->
         <scene sceneID="mZB-zq-UMl">
             <objects>
-                <viewController id="4Kn-hY-eCb" sceneMemberID="viewController">
+                <viewController id="4Kn-hY-eCb" customClass="DetailViewController" customModule="MyMovieChart2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lnC-04-YG9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="lJY-ar-CGa">
+                                <rect key="frame" x="170" y="316" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                             <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5dA-EJ-J1b">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
@@ -118,6 +123,11 @@
                         <viewLayoutGuide key="safeArea" id="bRm-mb-6uJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="4s0-2O-gn2"/>
+                    <connections>
+                        <outlet property="spinner" destination="lJY-ar-CGa" id="ZJt-Ga-Xv7"/>
+                        <outlet property="wv" destination="5dA-EJ-J1b" id="iit-2i-5N2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ocy-5r-kxQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8A20DFC2ABECEC300F0CE91 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A20DFB2ABECEC300F0CE91 /* DetailViewController.swift */; };
 		B8A3B3172AB9D69400FF6B87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A3B3162AB9D69400FF6B87 /* AppDelegate.swift */; };
 		B8A3B3192AB9D69400FF6B87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A3B3182AB9D69400FF6B87 /* SceneDelegate.swift */; };
 		B8A3B31B2AB9D69400FF6B87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A3B31A2AB9D69400FF6B87 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B8A20DFB2ABECEC300F0CE91 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B8A3B3132AB9D69400FF6B87 /* MyMovieChart2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMovieChart2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A3B3162AB9D69400FF6B87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8A3B3182AB9D69400FF6B87 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				B8A3B3242AB9D69500FF6B87 /* Info.plist */,
 				B8A3B32A2AB9D74E00FF6B87 /* ListViewController.swift */,
 				B8A3B32E2AB9FE2C00FF6B87 /* MovieCell.swift */,
+				B8A20DFB2ABECEC300F0CE91 /* DetailViewController.swift */,
 			);
 			path = MyMovieChart2;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				B8A3B32B2AB9D74E00FF6B87 /* ListViewController.swift in Sources */,
 				B8A3B3192AB9D69400FF6B87 /* SceneDelegate.swift in Sources */,
 				B8A3B32D2AB9E09200FF6B87 /* MovieVO.swift in Sources */,
+				B8A20DFC2ABECEC300F0CE91 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
