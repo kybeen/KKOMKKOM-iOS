@@ -24,6 +24,7 @@
 		B8A3B3342ABA055200FF6B87 /* rain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8A3B3312ABA055100FF6B87 /* rain.jpg */; };
 		B8A3B3352ABA055200FF6B87 /* secret.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8A3B3322ABA055100FF6B87 /* secret.jpg */; };
 		B8A3B3362ABA055200FF6B87 /* darknight.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8A3B3332ABA055100FF6B87 /* darknight.jpg */; };
+		B8A3EFAA2AC1EA6700433F5C /* TheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A3EFA92AC1EA6700433F5C /* TheaterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		B8A3B3312ABA055100FF6B87 /* rain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rain.jpg; path = ../../MyMovieChart/MyMovieChart/Resources/rain.jpg; sourceTree = "<group>"; };
 		B8A3B3322ABA055100FF6B87 /* secret.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = secret.jpg; path = ../../MyMovieChart/MyMovieChart/Resources/secret.jpg; sourceTree = "<group>"; };
 		B8A3B3332ABA055100FF6B87 /* darknight.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = darknight.jpg; path = ../../MyMovieChart/MyMovieChart/Resources/darknight.jpg; sourceTree = "<group>"; };
+		B8A3EFA92AC1EA6700433F5C /* TheaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				B8A20DFB2ABECEC300F0CE91 /* DetailViewController.swift */,
 				B8A20E212ABF5E7900F0CE91 /* TheaterCell.swift */,
 				B8A20E232ABF5F0300F0CE91 /* TheaterListController.swift */,
+				B8A3EFA92AC1EA6700433F5C /* TheaterViewController.swift */,
 			);
 			path = MyMovieChart2;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				B8A20E242ABF5F0300F0CE91 /* TheaterListController.swift in Sources */,
 				B8A3B3192AB9D69400FF6B87 /* SceneDelegate.swift in Sources */,
 				B8A3B32D2AB9E09200FF6B87 /* MovieVO.swift in Sources */,
+				B8A3EFAA2AC1EA6700433F5C /* TheaterViewController.swift in Sources */,
 				B8A20DFC2ABECEC300F0CE91 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
